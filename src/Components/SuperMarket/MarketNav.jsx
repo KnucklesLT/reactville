@@ -1,10 +1,10 @@
 import CategoryMenu from './CategoryMenu'
 
-const MarketNav = (props) => {
+const MarketNav = ({products}) => {
   return (
     <nav>
       <h1>Super Market</h1>
-      <CategoryMenu />
+      <CategoryMenu products={products}/>
       <button id="cart-button"></button>
     </nav>
   )
