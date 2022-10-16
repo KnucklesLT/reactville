@@ -6,8 +6,6 @@ const Clock = ({setDayTime}) => {
 
   const time = date.toLocaleTimeString([], {hour: 'numeric', minute: 'numeric'})
 
-  console.log(time)
-
   const currentTime = getMinutes(time)
 
   useEffect(() => {

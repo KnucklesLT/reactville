@@ -1,7 +1,7 @@
 
-const Wallet = () => {
+const Wallet = ({cash}) => {
   return (
-    <p className="display-items">Cash: $</p>
+    <p className="display-items">Cash: ${cash}</p>
   )
 }
 
