@@ -14,7 +14,7 @@ const App = () => {
   const [cash, setCash] = useState(100)
 
   const handleExchange = (amt) => {
-      //setcash() will be useful here
+      if(cash - amt > 0) setCash((cash - amt).toFixed(2))
   }
 
   return (
@@ -24,7 +24,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Landing daytime={daytime}/>}/>
           <Route path='/burgers' element={<BurgerShop />}/>
-          <Route path='/market' element={<SuperMarket />}/>
+          <Route path='/market' element={<SuperMarket handleExchange={handleExchange}/>}/>
         </Routes>
       </main>
     </>

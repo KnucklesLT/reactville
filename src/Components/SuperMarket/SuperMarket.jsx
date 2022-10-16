@@ -7,7 +7,7 @@ import MarketNav from './MarketNav'
 import DisplayProducts from './DisplayProducts'
 import Cart from './Cart'
 
-const SuperMarket = () => {
+const SuperMarket = ({handleExchange}) => {
   const [cart, setCart] = useState([])
   const [productCategory, setProductCategory] = useState('Produce')
 
@@ -43,7 +43,7 @@ const SuperMarket = () => {
         <DisplayProducts products={products} productCategory={productCategory} addToCart={addToCart}/>
       </section>
 
-      <Cart cart={cart} setCart={setCart} removeFromCart={removeFromCart}/>
+      <Cart cart={cart} setCart={setCart} removeFromCart={removeFromCart} handleExchange={handleExchange}/>
 
     </div>
   )
