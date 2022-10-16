@@ -1,10 +1,13 @@
+import CartItem from './CartItem'
 
-const Cart = () => {
+const Cart = ({cart}) => {
   return (
     <div className="cart">
       <h3>Cart</h3>
 
-      Use the map function to manipulate cart state and pass props to CartItem here
+      {cart.map((item, index) => 
+        <CartItem key={index} item={item}/>
+      )}
 
       <div className="cart-total">
         <p>Total:</p>
