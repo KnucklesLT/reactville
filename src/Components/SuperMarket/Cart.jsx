@@ -1,12 +1,12 @@
 import CartItem from './CartItem'
 
-const Cart = ({cart}) => {
+const Cart = ({cart, removeFromCart}) => {
   return (
     <div className="cart">
       <h3>Cart</h3>
 
       {cart.map((item, index) => 
-        <CartItem key={index} item={item}/>
+        <CartItem key={index} item={item} removeFromCart={removeFromCart}/>
       )}
 
       <div className="cart-total">
