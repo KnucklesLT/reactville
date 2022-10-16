@@ -8,7 +8,11 @@ import DisplayProducts from './DisplayProducts'
 import Cart from './Cart'
 
 const SuperMarket = ({handleExchange}) => {
+
   const [cart, setCart] = useState([])
+
+  const [toggleCart, setToggleCart] = useState(true)
+
   const [productCategory, setProductCategory] = useState('Produce')
   
 
@@ -34,17 +38,32 @@ const SuperMarket = ({handleExchange}) => {
     } else {
       setCart(cart.filter(el => el.id !== item.id))
     }
-
   }
 
   return (
     <div className="super-market">
       <section>
-        <MarketNav products={products} setProductCategory={setProductCategory}/>
-        <DisplayProducts products={products} productCategory={productCategory} addToCart={addToCart}/>
+        <MarketNav 
+          products={products} 
+          setProductCategory={setProductCategory}
+          toggleCart={toggleCart}
+          setToggleCart={setToggleCart}
+        />
+        <DisplayProducts 
+          products={products} 
+          productCategory={productCategory} 
+          addToCart={addToCart}
+        />
       </section>
 
-      <Cart cart={cart} setCart={setCart} removeFromCart={removeFromCart} handleExchange={handleExchange}/>
+      {toggleCart && 
+        <Cart 
+          cart={cart} 
+          setCart={setCart} 
+          removeFromCart={removeFromCart} 
+          handleExchange={handleExchange}
+        />
+      }
 
     </div>
   )
