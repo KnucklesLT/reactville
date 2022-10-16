@@ -1,6 +1,10 @@
 import CartItem from './CartItem'
 
-const Cart = ({cart, removeFromCart}) => {
+const Cart = ({cart, removeFromCart, setCart}) => {
+  const clearCart = () => {
+    setCart([])
+  }
+
   return (
     <div className="cart">
       <h3>Cart</h3>
@@ -15,7 +19,7 @@ const Cart = ({cart, removeFromCart}) => {
       </div>
 
       <button>CHECKOUT</button>
-      <button>CLEAR CART</button>
+      <button onClick={clearCart}>CLEAR CART</button>
     </div>
   )
 }
