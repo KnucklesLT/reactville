@@ -10,6 +10,7 @@ import Cart from './Cart'
 const SuperMarket = ({handleExchange}) => {
   const [cart, setCart] = useState([])
   const [productCategory, setProductCategory] = useState('Produce')
+  
 
   const addToCart = (item) => {
     const isItemInCart = cart.some(el => el.id === item.id)
